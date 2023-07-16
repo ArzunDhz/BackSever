@@ -7,7 +7,7 @@ export const sendUserSessionCookie =(user,res,message,statuscode=200)=>
    res.status(statuscode).cookie('token',token,{
     httpOnly:true,
     maxAge: new Date(Date.now()+900000),
-    sameSite:'lax'
+    sameSite:'none'
    }).json({
     user,
     success:true,
