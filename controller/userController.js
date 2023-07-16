@@ -56,6 +56,7 @@ export const deleteUser = async (req, res, next) => {
     user.deleteOne();
     res.cookie("token", "", {
         expires: new Date(Date.now()),
+       sameSite:'none'
       })
       .status(200)
       .json({ success: true, message: "User Deleted" });
@@ -69,6 +70,7 @@ export const logout = async (req, res, next) => {
     res
       .cookie("token", "", {
         expires: new Date(Date.now()),
+        sameSite:'none'
       })
       .json({
         success: true,
