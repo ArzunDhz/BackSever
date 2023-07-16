@@ -16,7 +16,7 @@ config({
 
 export const app = express();
 app.use(cors({
-    origin: 'https://arzun-node-backend.vercel.app/',
+    origin: 'https://arzun-node-backend.vercel.app',
     credentials:true
 }))
 app.use(express.json()) //express json is used for sending the data to the respone field while posting the request 
